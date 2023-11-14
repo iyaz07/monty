@@ -19,7 +19,7 @@ while (inst[i].opcode != NULL && operation != NULL)
 
 if (strcmp(inst[i].opcode, line) == 0)
 {
-	inst[i].f(*stack, linenum);
+	inst[i].f(&stack, linenum);
 	return (0);
 }
 
