@@ -1,7 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 /**
  * main - This program is to create a stack using a monty file as input
  * @argc - argument count
@@ -10,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-FILE* file;
+FILE *file;
 char *buffer;
 size_t bufferline = 0;
 size_t line = 1;
