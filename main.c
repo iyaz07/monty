@@ -1,4 +1,7 @@
 #include "monty.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
  * main - This program is to create a stack using a monty file as input
  * @argc - argument count
@@ -12,26 +15,24 @@ char *buffer = NULL;
 size_t buffer_num = 0;
 size_t line = 1;
 
-
-
 if (argc != 2) 
 {
-	dprintf(STDERR_FILENO, "USAGE: monty file");
+	fprintf(2, "USAGE: monty file");
 	exit(EXIT_FAILURE);
 }
 
-file = fopen(argv[1], "r")
+file = fopen(argv[1], "r");
 if (file == NULL)
 {
-	dprintf(STDERR_FILENO, "USAGE: monty file");
+	fprintf(2, "USAGE: monty file");
 	exit(EXIT_FAILURE);
 }
 
 
 for (line = 1, getline(&buffer, &buffer_line, file) != 0, line++)
 {
-dprintf(STDOUT_FILENO, "%s",buffer);
-free(buffer);
+	fprintf(1, "%ld:%s",line, buffer);
+	free(buffer);
 }
 
 fclose(file);
