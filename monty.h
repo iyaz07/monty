@@ -8,6 +8,7 @@
 #include <string.h>
 
 extern FILE *fileE;
+extern char *charC;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -41,4 +42,6 @@ void freestack(stack_t *head);
 int process(char *line, size_t linenum);
 void op_push (stack_t **head, unsigned int line_number);
 void op_pall (stack_t **head, unsigned int line_number);
+stack_t *addstack(stack_t **head, unsigned int n);
+
 #endif

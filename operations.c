@@ -13,6 +13,7 @@ stack_t *stack = NULL;
 
 instruction_t inst[] = {{"push", op_push}, {"pall", op_pall}, {NULL, NULL}};
 operation = strtok(line, " \n\t");
+charC = operation;
 
 while (inst[i].opcode != NULL && operation != NULL)
 {
