@@ -25,9 +25,11 @@ if (file == NULL)
 	exit(EXIT_FAILURE);
 }
 
+fileE = file;
+
 while ((getline(&buffer, &bufferline, file)) != -1)
 {
-    fprintf(stdout, "%ld:%s",line, buffer);
+    process(buffer, line);
     line++;
 }
 
