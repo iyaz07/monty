@@ -11,11 +11,13 @@ FILE *file;
 char *buffer;
 size_t bufferline = 0;
 size_t line = 1;
+
 if (argc != 2) 
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
+
 file = fopen(argv[1], "r");
 if (file == NULL)
 {
@@ -27,9 +29,9 @@ while ((getline(&buffer, &bufferline, file)) != -1)
 {
     fprintf(stdout, "%ld:%s",line, buffer);
     line++;
-    free(buffer);
 }
 
+free(buffer);
 fclose(file);
 return (0);
 }
