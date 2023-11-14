@@ -34,4 +34,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **head, unsigned int line_number);
 } instruction_t;
 
+
+
+void freestack(stack_t *head);
+
+
 #endif
