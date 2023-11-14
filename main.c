@@ -1,6 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - This program is to create a stack using a monty file as input
@@ -8,30 +6,32 @@
  * @argv - argument vector
  * Return: EXIT_FAILURE in any occured issue, else 0
  */
+
 int main(int argc, char *argv[])
 {
 FILE* file;
 char *buffer = NULL;
-size_t buffer_num = 0;
+size_t bufferline = 0;
 size_t line = 1;
 
 if (argc != 2) 
 {
-	fprintf(2, "USAGE: monty file");
+	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 
 file = fopen(argv[1], "r");
 if (file == NULL)
 {
-	fprintf(2, "USAGE: monty file");
+	fprintf(stderr, "USAGE: Error: Can't open file %s\n", argv[1]);
 	exit(EXIT_FAILURE);
 }
 
 
-for (line = 1, getline(&buffer, &buffer_line, file) != 0, line++)
+while ( getline(&buffer, &bufferline, file) != -1)
 {
-	fprintf(1, "%ld:%s",line, buffer);
+	fprintf(stdout, "%ld:%s",line, buffer);
+	line++;
 	free(buffer);
 }
 
