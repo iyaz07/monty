@@ -26,7 +26,6 @@ if (strcmp(ops[i].op, s) == 0)
 i++;
 } 
 
-
 fprintf(stderr, "L%ld: unknown instruction %s", linenum , operation);
 fclose(file);
 freestack(*stack);
