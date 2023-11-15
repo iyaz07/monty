@@ -25,8 +25,6 @@ if (file == NULL)
 	exit(EXIT_FAILURE);
 }
 
-fileE = file;
-
 while ((getline(&buffer, &bufferline, file)) != -1)
 {
     process(buffer, line);

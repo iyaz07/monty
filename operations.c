@@ -13,7 +13,7 @@ stack_t *stack = NULL;
 
 instruction_t inst[] = {{"push", op_push}, {"pall", op_pall}, {NULL, NULL}};
 operation = strtok(line, " \n\t");
-charC = operation;
+charC = line;
 
 while (inst[i].opcode != NULL && operation != NULL)
 {
@@ -28,7 +28,7 @@ i++;
 }
 
 fprintf(stderr, "L%ld: unknown instruction %s", linenum , operation);
-fclose(fileE);
+fclose(file);
 freestack(stack);
 exit(EXIT_FAILURE);
 

@@ -7,9 +7,9 @@
  */
 void op_push (stack_t **head, unsigned int line_number)
 {
-(void)line_number;
 char *argument;
 int number;
+(void)line_number;
 
 argument = strtok(charC, " \n\t");
 argument = strtok(NULL, " \n\t");
