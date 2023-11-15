@@ -16,9 +16,6 @@ instruction_t inst[] = {{"push", op_push}, {"pall", op_pall}, {NULL, NULL}};
 operation = strtok(lineL, " \n\t\r");
 operation = strtok(NULL, " \n\t\r");
 
-printf("Post+operation L: %s\n", operation);
-printf("Post+Line: %s\n", lineL);
-
 while (inst[i].opcode != NULL && lineL != NULL)
 {
 
@@ -33,9 +30,8 @@ i++;
 }
 
 fprintf(stderr, "L%ld: unknown instruction %s\n", linenum , lineL);
-fclose(fileF);
 freestack(stack);
-exit(EXIT_FAILURE);
+shutdown();
 
 return (1);
 }

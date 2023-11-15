@@ -1,19 +1,21 @@
 #include "monty.h"
+
 /**
- * main - This program is to create a stack using a monty file as input
- * @argc - argument count
- * @argv - argument vector
- * Return: EXIT_FAILURE in any occured issue, else 0
+ * op_pall - This program is to push into a stack
+ * @head - header of the stack
+ * @line_number - number of the line
+ * Return: EXIT_FAILURE in any occured issue, else nothing
  */
+
 void op_pall (stack_t **head, unsigned int line_number)
 {
+stack_t *temp = *head;
 (void)line_number;
 
-while(*head != NULL)
+while(temp != NULL)
 {
-printf("D:\n");
-printf("%i\n", (*head)->n);
-*head = (*head)->next;
+    printf("%i\n", temp->n);
+    temp = temp->next;
 }
 
 }

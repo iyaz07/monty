@@ -35,7 +35,6 @@ while ((check = (getline(&lineL, &bufferline, fileF))) != -1)
 	linenum++;
 }
 
-free(lineL);
 fclose(fileF);
 return (0);
 }

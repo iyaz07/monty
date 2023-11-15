@@ -43,5 +43,6 @@ int process(size_t linenum);
 void op_push (stack_t **head, unsigned int line_number);
 void op_pall (stack_t **head, unsigned int line_number);
 stack_t *addstack(stack_t **head, unsigned int n);
+void shutdown(void);
 
 #endif
