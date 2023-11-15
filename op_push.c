@@ -15,8 +15,6 @@ int number;
 
 argument = strtok(lineL, " \n\t");
 
-printf(":D\n");
-
 number = atoi(argument);
 addstack(head, number);
 }
