@@ -35,11 +35,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **head, unsigned int line_number);
 } instruction_t;
 
-extern FILE *file;
-extern char *charC;
+extern FILE *fileF;
+extern char *lineL;
 
 void freestack(stack_t *head);
-int process(char *line, size_t linenum);
+int process(size_t linenum);
 void op_push (stack_t **head, unsigned int line_number);
 void op_pall (stack_t **head, unsigned int line_number);
 stack_t *addstack(stack_t **head, unsigned int n);

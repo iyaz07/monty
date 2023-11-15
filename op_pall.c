@@ -11,6 +11,7 @@ void op_pall (stack_t **head, unsigned int line_number)
 
 while(*head != NULL)
 {
+printf("D:\n");
 printf("%i\n", (*head)->n);
 *head = (*head)->next;
 }

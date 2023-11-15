@@ -5,20 +5,21 @@
  * @argv - argument vector
  * Return: EXIT_FAILURE in any occured issue, else 0
  */
-int process(char *line, size_t linenum)
+int process(size_t linenum)
 {
 char *operation;
 unsigned int i = 0;
 stack_t *stack = NULL;
 
 instruction_t inst[] = {{"push", op_push}, {"pall", op_pall}, {NULL, NULL}};
-operation = strtok(line, " \n\t");
-charC = line;
+operation = strtok(lineL, " \n\t");
+
+printf("%s\n", operation);
 
 while (inst[i].opcode != NULL && operation != NULL)
 {
 
-if (strcmp(inst[i].opcode, line) == 0)
+if (strcmp(inst[i].opcode, operation) == 0)
 {
 	inst[i].f(&stack, linenum);
 	return (0);
@@ -28,7 +29,7 @@ i++;
 }
 
 fprintf(stderr, "L%ld: unknown instruction %s", linenum , operation);
-fclose(file);
+fclose(fileF);
 freestack(stack);
 exit(EXIT_FAILURE);
 

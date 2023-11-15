@@ -5,12 +5,15 @@
  * @argv - argument vector
  * Return: EXIT_FAILURE in any occured issue, else 0
  */
+
+FILE *fileF;
+char *lineL;
+
 int main(int argc, char *argv[])
 {
-FILE *file;
-char *buffer;
 size_t bufferline = 0;
-size_t line = 1;
+size_t linenum = 1;
+int check;
 
 if (argc != 2) 
 {
@@ -18,20 +21,21 @@ if (argc != 2)
 	exit(EXIT_FAILURE);
 }
 
-file = fopen(argv[1], "r");
-if (file == NULL)
+fileF = fopen(argv[1], "r");
+if (fileF == NULL)
 {
 	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 	exit(EXIT_FAILURE);
 }
 
-while ((getline(&buffer, &bufferline, file)) != -1)
+while ((check = (getline(&lineL, &bufferline, fileF))) != -1)
 {
-    process(buffer, line);
-    line++;
+	if (check != 0)
+	{ process(linenum); }
+	linenum++;
 }
 
-free(buffer);
-fclose(file);
+free(lineL);
+fclose(fileF);
 return (0);
 }
