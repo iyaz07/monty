@@ -1,14 +1,12 @@
-
-push 1
-push 2
-push 3
+push 200
+push 100
+push 20
 push 4
-add
-nop
 pall
-nop
-add
+sub
 pall
-add
+sub
 pall
-add
+sub
+pall
+sub

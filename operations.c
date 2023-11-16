@@ -12,7 +12,7 @@ unsigned int i = 0;
 
 instruction_t inst[] = {{"push", op_push}, {"pint", op_pint}
 , {"pop", op_pop}, {"add", op_add}, {"pall", op_pall}
-, {"swap", op_swap}, {"nop", op_nop}, {NULL, NULL}};
+, {"swap", op_swap}, {"nop", op_nop}, {"sub", op_sub}, {NULL, NULL}};
 
 operation = strtok(line, " \n\t\r");
 bank.pusharg = strtok(NULL, " \n\t\r");
