@@ -16,7 +16,7 @@ instruction_t inst[] = {{"push", op_push}, {"pint", op_pint}
 , {"swap", op_swap}, {"nop", op_nop}, {"sub", op_sub}
 , {"div", op_div}, {"mul", op_mul}, {"mod", op_mod}
 , {"pchar", op_pchar}, {"pstr", op_pstr}, {"rotl", op_rotl}
-, {NULL, NULL}};
+, {"rotr", op_rotr}, {NULL, NULL}};
 
 operation = strtok(line, " \n\t\r");
 bank.pusharg = strtok(NULL, " \n\t\r");
