@@ -3,10 +3,10 @@ push 100
 push 20
 push 4
 pall
-sub
+div
 pall
-sub
+div
 pall
-sub
+div
 pall
-sub
+div

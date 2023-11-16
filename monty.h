@@ -11,6 +11,7 @@
  * struct bankstructure - file and line content
  * @fileF: pointer to monty file
  * @lineL: line content
+ * @pusharg: Argument next to the push command
  */
 typedef struct bankstructure
 {
@@ -58,6 +59,7 @@ void op_swap(stack_t **head, unsigned int line_number);
 void op_add(stack_t **head, unsigned int line_number);
 void op_nop(stack_t **head, unsigned int line_number);
 void op_sub(stack_t **head, unsigned int line_number);
+void op_div(stack_t **head, unsigned int line_number);
 void addstack(stack_t **head, unsigned int n);
 void shutdown(stack_t **stack);
 
