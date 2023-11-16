@@ -12,7 +12,7 @@ void op_push(stack_t **head, unsigned int line_number)
 int number;
 (void)line_number;
 
-number = atoi(bank.lineL);
+number = atoi(bank.pusharg);
 addstack(head, number);
 
 }

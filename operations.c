@@ -5,7 +5,7 @@
  * @linenum: to read the line number
  * Return: EXIT_FAILURE in any occured issue, else 0
  */
-int process(stack_t **stack, size_t linenum)
+int process(char *line, stack_t **stack, size_t linenum)
 {
 char *operation;
 unsigned int i = 0;
@@ -14,15 +14,14 @@ instruction_t inst[] = {{"push", op_push}, {"pint", op_pint}
 , {"pop", op_pop}, {"add", op_add}, {"pall", op_pall}
 , {"swap", op_swap}, {"nop", op_nop}, {NULL, NULL}};
 
-operation = strtok(bank.lineL, " \n\t\r");
-operation = strtok(NULL, " \n\t\r");
+operation = strtok(line, " \n\t\r");
+bank.pusharg = strtok(NULL, " \n\t\r");
 
-while (inst[i].opcode != NULL && bank.lineL != NULL)
+while (inst[i].opcode != NULL && operation != NULL)
 {
 
-if (strcmp(inst[i].opcode, bank.lineL) == 0)
+if (strcmp(inst[i].opcode, operation) == 0)
 {
-	bank.lineL = operation;
 	inst[i].f(stack, linenum);
 	return (0);
 }
@@ -30,7 +29,7 @@ if (strcmp(inst[i].opcode, bank.lineL) == 0)
 i++;
 }
 
-fprintf(stderr, "L%ld: unknown instruction %s\n", linenum, bank.lineL);
+fprintf(stderr, "L%ld: unknown instruction %s\n", linenum, operation);
 freestack(*stack);
 shutdown();
 

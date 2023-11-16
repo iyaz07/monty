@@ -1,5 +1,5 @@
 #include "monty.h"
-bankdef bank = {NULL, NULL};
+bankdef bank = {NULL, NULL, NULL};
 /**
  * main - This program is to create a stack using a monty file as input
  * @argc: argument count
@@ -37,7 +37,7 @@ while ((check = (getline(&buffer, &buffersize, file))) > 0)
 	bank.lineL = buffer;
 	if (check != 0)
 	{
-		process(&stack, linenum);
+		process(buffer, &stack, linenum);
 	}
 	linenum++;
 }
