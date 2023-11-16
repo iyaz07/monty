@@ -20,6 +20,11 @@ instruction_t inst[] = {{"push", op_push}, {"pint", op_pint}
 operation = strtok(line, " \n\t\r");
 bank.pusharg = strtok(NULL, " \n\t\r");
 
+if (operation[0] == '#')
+{
+return (0);
+}
+
 while (inst[i].opcode != NULL && operation != NULL)
 {
 
