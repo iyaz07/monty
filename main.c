@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 size_t bufferline = 0;
 size_t linenum = 1;
 int check;
+stack_t *stack = NULL;
 
 if (argc != 2) 
 {
@@ -31,10 +32,10 @@ if (fileF == NULL)
 while ((check = (getline(&lineL, &bufferline, fileF))) != -1)
 {
 	if (check != 0)
-	{ process(linenum); }
+	{ process(&stack, linenum); }
 	linenum++;
 }
-
+freestack(stack);
 fclose(fileF);
 return (0);
 }

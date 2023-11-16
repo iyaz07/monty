@@ -17,4 +17,5 @@ argument = strtok(lineL, " \n\t");
 
 number = atoi(argument);
 addstack(head, number);
+
 }

@@ -7,16 +7,14 @@
  * Return: The address of the new element.
  */
 
-stack_t *addstack(stack_t **head, unsigned int n)
+void addstack(stack_t **head, unsigned int n)
 {
 stack_t *node;
 
 node = malloc(sizeof(stack_t));
 
 if (node == NULL)
-{
-return (NULL);
-}
+{ return; }
 
 node->n = n;
 node->next = NULL;
@@ -29,6 +27,4 @@ node->next = *head;
 }
 
 *head = node;
-
-return (*head);
 }
