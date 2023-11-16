@@ -1,12 +1,11 @@
-push 200
-push 100
-push 20
+push 5
 push 4
+push 2
+push 3
 pall
-div
+mul
 pall
-div
+mul
 pall
-div
+mul
 pall
-div
