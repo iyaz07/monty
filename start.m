@@ -1,6 +1,7 @@
-push 1
-push 2
-pall
+push 80
+pchar
+push 81
+pchar
 #doesthiswork
 pop
 pall
