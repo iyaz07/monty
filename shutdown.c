@@ -1,14 +1,12 @@
 #include "monty.h"
 
 /**
- * op_push - This program is to push into a stack
- * @head - header of the stack
- * @line_number - number of the line
- * Return: EXIT_FAILURE in any occured issue, else nothing
+ * shutdown - This program is to close the file and exit with EXIT_FAILURE
+ * Return: EXIT_FAILURE
  */
 
 void shutdown(void)
 {
-fclose(fileF);
+fclose(bank.fileF);
 exit(EXIT_FAILURE);
 }

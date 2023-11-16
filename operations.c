@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * main - This program is to create a stack using a monty file as input
- * @argc - argument count
- * @argv - argument vector
+ * process - To process a line of monty code
+ * @stack: a pointer to the head of the stack
+ * @linenum: to read the line number
  * Return: EXIT_FAILURE in any occured issue, else 0
  */
 int process(stack_t **stack, size_t linenum)
@@ -12,15 +12,15 @@ unsigned int i = 0;
 
 instruction_t inst[] = {{"push", op_push}, {"pall", op_pall}, {NULL, NULL}};
 
-operation = strtok(lineL, " \n\t\r");
+operation = strtok(bank.lineL, " \n\t\r");
 operation = strtok(NULL, " \n\t\r");
 
-while (inst[i].opcode != NULL && lineL != NULL)
+while (inst[i].opcode != NULL && bank.lineL != NULL)
 {
 
-if (strcmp(inst[i].opcode, lineL) == 0)
+if (strcmp(inst[i].opcode, bank.lineL) == 0)
 {
-	lineL = operation;
+	bank.lineL = operation;
 	inst[i].f(stack, linenum);
 	return (0);
 }
@@ -28,7 +28,7 @@ if (strcmp(inst[i].opcode, lineL) == 0)
 i++;
 }
 
-fprintf(stderr, "L%ld: unknown instruction %s\n", linenum , lineL);
+fprintf(stderr, "L%ld: unknown instruction %s\n", linenum, bank.lineL);
 freestack(*stack);
 shutdown();
 

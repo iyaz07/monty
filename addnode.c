@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add_dnodeint - Adds a new node at the start of a double linked list
+ * addstack - Adds a new node at the start of a double linked list
  * @head:Pointer to the first structure(element in the list).
  * @n: The integer added to the list.
  * Return: The address of the new element.

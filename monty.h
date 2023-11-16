@@ -8,6 +8,18 @@
 #include <string.h>
 
 /**
+ * struct bankstructure - file and line content
+ * @fileF: pointer to monty file
+ * @lineL: line content
+ */
+typedef struct bankstructure
+{
+	FILE *fileF;
+	char *lineL;
+}  bankdef;
+extern bankdef bank;
+
+/**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
@@ -35,13 +47,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **head, unsigned int line_number);
 } instruction_t;
 
-extern FILE *fileF;
-extern char *lineL;
-
 void freestack(stack_t *head);
 int process(stack_t **stack, size_t linenum);
-void op_push (stack_t **head, unsigned int line_number);
-void op_pall (stack_t **head, unsigned int line_number);
+void op_push(stack_t **head, unsigned int line_number);
+void op_pall(stack_t **head, unsigned int line_number);
 void addstack(stack_t **head, unsigned int n);
 void shutdown(void);
 
