@@ -10,7 +10,8 @@ int process(stack_t **stack, size_t linenum)
 char *operation;
 unsigned int i = 0;
 
-instruction_t inst[] = {{"push", op_push}, {"pall", op_pall}, {NULL, NULL}};
+instruction_t inst[] = {{"push", op_push}, {"pint", op_pint}
+, {"pop", op_pop}, {"pall", op_pall}, {"swap", op_swap}, {NULL, NULL}};
 
 operation = strtok(bank.lineL, " \n\t\r");
 operation = strtok(NULL, " \n\t\r");

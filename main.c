@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 size_t buffersize = 0;
 size_t linenum = 1;
 FILE *file;
-char *buffer;
+char *buffer = NULL;
 int check;
 stack_t *stack = NULL;
 
@@ -39,7 +39,6 @@ while ((check = (getline(&buffer, &buffersize, file))) > 0)
 	{
 		process(&stack, linenum);
 	}
-
 	linenum++;
 }
 free(buffer);

@@ -7,6 +7,7 @@
 
 void shutdown(void)
 {
+free(bank.lineL);
 fclose(bank.fileF);
 exit(EXIT_FAILURE);
 }
