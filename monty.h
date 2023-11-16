@@ -63,6 +63,7 @@ void op_div(stack_t **head, unsigned int line_number);
 void op_mul(stack_t **head, unsigned int line_number);
 void op_mod(stack_t **head, unsigned int line_number);
 void op_pchar(stack_t **head, unsigned int line_number);
+void op_pstr(stack_t **head, unsigned int line_number);
 void addstack(stack_t **head, unsigned int n);
 void shutdown(stack_t **stack);
 
