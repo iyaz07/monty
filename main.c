@@ -42,6 +42,7 @@ while ((check = (getline(&buffer, &buffersize, file))) > 0)
 
 	linenum++;
 }
+free(buffer);
 freestack(stack);
 fclose(file);
 return (0);
