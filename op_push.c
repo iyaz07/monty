@@ -12,7 +12,13 @@ void op_push(stack_t **head, unsigned int line_number)
 int number;
 (void)line_number;
 
+if (bank.pusharg == NULL)
+{
+fprintf(stderr, "L%d: usage: push integer\n", line_number);
+shutdown(head);
+}
+
+
 number = atoi(bank.pusharg);
 addstack(head, number);
-
 }

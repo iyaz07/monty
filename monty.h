@@ -50,7 +50,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void freestack(stack_t *head);
-int process(char *line, stack_t **stack, size_t linenum);
+void process(char *line, stack_t **stack, size_t linenum);
 void op_push(stack_t **head, unsigned int line_number);
 void op_pall(stack_t **head, unsigned int line_number);
 void op_pint(stack_t **head, unsigned int line_number);
