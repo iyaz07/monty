@@ -31,4 +31,5 @@ shutdown(head);
 ((*head)->next)->n %= (*head)->n;
 *head = (*head)->next;
 free((*head)->prev);
+(*head)->prev = NULL;
 }
