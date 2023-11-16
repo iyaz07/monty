@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
 {
 size_t buffersize = 0;
 size_t linenum = 1;
-FILE *file;
+FILE *file = NULL;
 char *buffer = NULL;
-int check;
+int check = 0;
 stack_t *stack = NULL;
 
 if (argc != 2)
