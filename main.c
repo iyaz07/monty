@@ -35,7 +35,7 @@ bank.fileF = file;
 while ((check = (getline(&buffer, &buffersize, file))) > 0)
 {
 	bank.lineL = buffer;
-	if (check != 0)
+	if (check > 1)
 	{
 		process(buffer, &stack, linenum);
 	}
