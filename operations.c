@@ -6,7 +6,7 @@
  * @line: the information in a line
  * Return: EXIT_FAILURE in any occured issue, else 0
  */
-void process(char *line, stack_t **stack, size_t linenum)
+int process(char *line, stack_t **stack, size_t linenum)
 {
 char *operation;
 unsigned int i = 0;
@@ -26,7 +26,7 @@ while (inst[i].opcode != NULL && operation != NULL)
 if (strcmp(inst[i].opcode, operation) == 0)
 {
 	inst[i].f(stack, linenum);
-	return;
+	return (0);
 }
 
 i++;
@@ -34,4 +34,5 @@ i++;
 
 fprintf(stderr, "L%ld: unknown instruction %s\n", linenum, operation);
 shutdown(stack);
+return (1);
 }
