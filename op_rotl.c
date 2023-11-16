@@ -19,11 +19,11 @@ if (*head != NULL)
 {
 	if ((*head)->next != NULL)
 	{
-		while (finalnode->next != NULL)			
+		while (finalnode->next != NULL)
 		{
 		finalnode = finalnode->next;
 		}
-	
+
 	*head = (*head)->next;
 	finalnode->next = firstnode;
 	firstnode->prev = finalnode;

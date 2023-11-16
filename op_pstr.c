@@ -19,8 +19,8 @@ keep = *head;
 while (keep != NULL)
 {
 if ((keep->n <= 0) || (keep->n > 127))
-{ 
-	break; 
+{
+	break;
 }
 length++;
 keep = keep->next;
