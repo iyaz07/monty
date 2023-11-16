@@ -1,0 +1,20 @@
+#include "monty.h"
+
+/**
+ * op_pint - This program is to push into a stack
+ * @head: header of the stack
+ * @line_number: number of the line
+ * Return: EXIT_FAILURE in any occured issue, else nothing
+ */
+
+void op_pint(stack_t **head, unsigned int line_number)
+{
+
+if (*head == NULL)
+{
+fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+shutdown(head);
+}
+
+fprintf(stdout, "%i\n", (*head)->n);
+}
