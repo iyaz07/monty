@@ -30,8 +30,7 @@ i++;
 }
 
 fprintf(stderr, "L%ld: unknown instruction %s\n", linenum, operation);
-freestack(*stack);
-shutdown();
+shutdown(stack);
 
 return (1);
 }

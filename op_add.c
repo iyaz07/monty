@@ -13,15 +13,13 @@ void op_add(stack_t **head, unsigned int line_number)
 if (*head == NULL)
 {
 fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-freestack(*head);
-shutdown();
+shutdown(head);
 }
 
 if ((*head)->next == NULL)
 {
 fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-freestack(*head);
-shutdown();
+shutdown(head);
 }
 
 ((*head)->next)->n += (*head)->n;

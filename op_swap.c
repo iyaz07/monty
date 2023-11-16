@@ -14,15 +14,13 @@ unsigned int storage;
 if (*head == NULL)
 {
 fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-freestack(*head);
-shutdown();
+shutdown(head);
 }
 
 if ((*head)->next == NULL)
 {
 fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-freestack(*head);
-shutdown();
+shutdown(head);
 }
 
 storage = ((*head)->next)->n;

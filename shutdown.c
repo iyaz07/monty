@@ -5,8 +5,9 @@
  * Return: EXIT_FAILURE
  */
 
-void shutdown(void)
+void shutdown(stack_t **stack)
 {
+freestack(*stack);
 free(bank.lineL);
 fclose(bank.fileF);
 exit(EXIT_FAILURE);

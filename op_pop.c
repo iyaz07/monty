@@ -13,8 +13,7 @@ void op_pop(stack_t **head, unsigned int line_number)
 if (*head == NULL)
 {
 fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-freestack(*head);
-shutdown();
+shutdown(head);
 }
 
 *head = (*head)->next;
